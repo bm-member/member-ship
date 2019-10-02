@@ -2,7 +2,6 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +11,7 @@ if (!isset($_SESSION)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Membership</title>
-    <link rel="stylesheet" href="asset/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -24,7 +23,7 @@ if (!isset($_SESSION)) {
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <?php if (isset($_SESSION['auth'])) : ?>
+                <?php if ($_SESSION['auth'] ?? false) : ?>
                     <a class="nav-item nav-link" href="logout.php">logout</a>
                 <?php else: ?>
                     <a class="nav-item nav-link" href="login_form.php">Login</a>
